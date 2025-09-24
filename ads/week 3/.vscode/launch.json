@@ -1,0 +1,19 @@
+{
+    "configurations": [
+
+        {
+            "name": "Run active file with g++",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "lldb",
+            "preLaunchTask": "build active file with g++"
+        }
+    ],
+    "version": "2.0.0"
+}

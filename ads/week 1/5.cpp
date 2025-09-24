@@ -1,0 +1,41 @@
+#include <iostream>
+#include <queue>
+using namespace std;
+int main(){
+    queue <int> boris, nursik;
+    int x;
+    for (int i=0;i<5;i++){
+        cin>>x;
+        boris.push(x);
+    }
+    for (int i=0;i<5;i++){
+        cin>>x;
+        nursik.push(x);
+    }
+    int moves=0;
+    while (!boris.empty() && !nursik.empty() && moves <1000000){
+        moves++;
+        int a = boris.front();
+        boris.pop();
+        int b = nursik.front();
+        nursik.pop();
+        if ((a ==0 && b==9) || (a > b && ! (a ==9 && b==0))){
+            boris.push(a);
+            boris.push(b);
+        }
+        else {
+            nursik.push(a);
+            nursik.push(b);
+        }
+    }
+    if (moves >=1000000){
+        cout<<"draw";
+    }
+    else if (boris.empty()){
+        cout<<"Nursik "<< moves;
+    }
+    else {
+        cout<<"Boris "<<moves;
+    }
+    return 0;
+}
